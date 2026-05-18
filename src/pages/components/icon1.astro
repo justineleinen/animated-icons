@@ -2,53 +2,22 @@
 // empty frontmatter for future use
 ---
 
-<!-- Square icon from Lucide -->
+<!-- shell icon from Lucide -->
 
-<svg id="theSquare"
-xmlns="http://www.w3.org/2000/svg"
-width="24"
-height="24"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
-stroke-linecap="round"
-stroke-linejoin="round"
-class="lucide lucide-square-icon lucide-square">
-
-    <rect width="18" height="18" x="3" y="3" rx="2"/>
-
+<svg id="shell" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M14 11a2 2 0 1 1-4 0 4 4 0 0 1 8 0 6 6 0 0 1-12 0 8 8 0 0 1 16 0 10 10 0 1 1-20 0 11.93 11.93 0 0 1 2.42-7.22 2 2 0 1 1 3.16 2.44"/>
 </svg>
 
-<!-- GSAP Scripting -->
+<!-- GSAP scripting -->
 <script>
-    import gsap from 'gsap';
+  import gsap from 'gsap';
 
-    gsap.from('#theSquare rect', {
-        scale: 0,
-        transformOrigin: 'center',
-        duration: 0.6,
-        ease: 'back.out(1.7)'
-    });
-
-    // Hover animations
-    const square = document.querySelector('#theSquare');
-
-    square.addEventListener('mouseenter', () => {
-        gsap.to('#theSquare rect', {
-            scale: 1.2,
-            transformOrigin: 'center',
-            duration: 0.3,
-            ease: 'power2.out'
-        });
-    });
-
-    square.addEventListener('mouseleave', () => {
-        gsap.to('#theSquare rect', {
-            scale: 1,
-            transformOrigin: 'center',
-            duration: 0.3,
-            ease: 'power2.in'
-        });
-    });
+  // Shell - spin on load, pause/resume on hover
+  gsap.to('#shell', {
+    rotation: 360,
+    duration: 6,
+    repeat: -1,
+    ease: 'none',
+    transformOrigin: '50% 50%'
+  });
 </script>
