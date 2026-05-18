@@ -2,44 +2,28 @@
 // frontmatter for later use
 ---
 
-<!-- SVG code for a circle 
--->
-<svg id="theCircle"
-
-xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-icon lucide-circle">
-    
-    <circle cx="12" cy="12" r="10"/>
-
+<!-- Wave -->
+<svg id="wave" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/>
+  <path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/>
+  <path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/>
 </svg>
 
-<!-- GSAP Scripting -->
 <script>
-    // import GSAP
-    import gsap from 'gsap';
+ // Wave — ripple side to side
+  gsap.to('#wave', {
+    x: 8,
+    duration: 1.2,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut'
+  });
 
-    // animate it
-    gsap.from('#theCircle circle', {
-        x: -200
-    });
-
-    // Hover animations
-    const circle = document.querySelector('#theCircle');
-
-    circle.addEventListener('mouseenter', () => {
-        gsap.to('#theCircle circle', {
-            scale: 1.2,
-            transformOrigin: 'center',
-            duration: 0.3,
-            ease: 'power2.out'
-        });
-    });
-
-    circle.addEventListener('mouseleave', () => {
-        gsap.to('#theCircle circle', {
-            scale: 1,
-            transformOrigin: 'center',
-            duration: 0.3,
-            ease: 'power2.in'
-        });
-    });
+  const wave = document.querySelector('#wave');
+  wave.addEventListener('mouseenter', () => {
+    gsap.to('#wave', { scaleY: 1.4, duration: 0.3, ease: 'power2.out' });
+  });
+  wave.addEventListener('mouseleave', () => {
+    gsap.to('#wave', { scaleY: 1, duration: 0.3, ease: 'power2.in' });
+  });
 </script>
