@@ -20,4 +20,8 @@
     ease: 'none',
     transformOrigin: '50% 50%'
   });
+
+ const shell = document.querySelector('#shell');
+  shell.addEventListener('mouseenter', () => gsap.globalTimeline.pause());
+  shell.addEventListener('mouseleave', () => gsap.globalTimeline.resume());
 </script>
