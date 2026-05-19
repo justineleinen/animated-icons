@@ -31,11 +31,4 @@
     ease: 'sine.inOut'
   });
 
-  const fish = document.querySelector('#fish');
-  fish.addEventListener('mouseenter', () => {
-    gsap.to('#fish', { scaleX: 1.2, duration: 0.3, ease: 'power2.out' });
-  });
-  fish.addEventListener('mouseleave', () => {
-    gsap.to('#fish', { scaleX: 1, duration: 0.3, ease: 'power2.in' });
-  });
 </script>
