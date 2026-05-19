@@ -38,10 +38,6 @@ body {
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
-.lucide:hover {
-  opacity: 0.85;
-  filter: brightness(1.1);
-}
 
 /* ── individual icon colors ─────────────────────────────── */
 #shell  { stroke: var(--moss);   }
