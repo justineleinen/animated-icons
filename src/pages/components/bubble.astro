@@ -25,13 +25,6 @@
       ease: 'power1.in',
       repeatDelay: 0.5
     }
-  );
+ );
 
-  const bubble = document.querySelector('#bubble');
-  bubble.addEventListener('mouseenter', () => {
-    gsap.to('#bubble', { scale: 1.3, duration: 0.3, ease: 'power2.out' });
-  });
-  bubble.addEventListener('mouseleave', () => {
-    gsap.to('#bubble', { scale: 1, duration: 0.3, ease: 'power2.in' });
-  });
 </script>
