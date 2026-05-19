@@ -11,8 +11,6 @@
 <!-- GSAP scripting -->
 <script>
   import gsap from 'gsap';
-
-  // Shell - spin on load, pause/resume on hover
   gsap.to('#shell', {
     rotation: 360,
     duration: 6,
@@ -21,7 +19,4 @@
     transformOrigin: '50% 50%'
   });
 
- const shell = document.querySelector('#shell');
-  shell.addEventListener('mouseenter', () => gsap.globalTimeline.pause());
-  shell.addEventListener('mouseleave', () => gsap.globalTimeline.resume());
 </script>
