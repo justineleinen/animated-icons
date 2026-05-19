@@ -2,54 +2,36 @@
 // empty frontmatter for future use
 ---
 
-<!-- Hexagon icon from Lucide -->
+<!-- bubble -->
 
-<svg id="theHexagon"
-xmlns="http://www.w3.org/2000/svg"
-width="24"
-height="24"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
-stroke-linecap="round"
-stroke-linejoin="round"
-class="lucide lucide-hexagon-icon lucide-hexagon">
-
-    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+<svg id="bubble" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7.001 15.085A1.5 1.5 0 0 1 9 16.5"/>
+  <circle cx="18.5" cy="8.5" r="3.5"/>
+  <circle cx="7.5" cy="16.5" r="5.5"/>
+  <circle cx="7.5" cy="4.5" r="2.5"/>
 
 </svg>
 
 <!-- GSAP Scripting -->
+// Bubble — float up and fade, then reset
 <script>
-    import gsap from 'gsap';
+  gsap.fromTo('#bubble',
+    { y: 0, opacity: 1 },
+    {
+      y: -20,
+      opacity: 0,
+      duration: 2,
+      repeat: -1,
+      ease: 'power1.in',
+      repeatDelay: 0.5
+    }
+  );
 
-    gsap.from('#theHexagon path', {
-        scale: 2,
-        opacity: 0,
-        transformOrigin: 'center',
-        duration: 0.7,
-        ease: 'elastic.out(1, 0.5)'
-    });
-
-    // Hover animations
-    const hexagon = document.querySelector('#theHexagon');
-
-    hexagon.addEventListener('mouseenter', () => {
-        gsap.to('#theHexagon path', {
-            rotation: 30,
-            transformOrigin: 'center',
-            duration: 0.4,
-            ease: 'power2.out'
-        });
-    });
-
-    hexagon.addEventListener('mouseleave', () => {
-        gsap.to('#theHexagon path', {
-            rotation: 0,
-            transformOrigin: 'center',
-            duration: 0.4,
-            ease: 'power2.in'
-        });
-    });
+  const bubble = document.querySelector('#bubble');
+  bubble.addEventListener('mouseenter', () => {
+    gsap.to('#bubble', { scale: 1.3, duration: 0.3, ease: 'power2.out' });
+  });
+  bubble.addEventListener('mouseleave', () => {
+    gsap.to('#bubble', { scale: 1, duration: 0.3, ease: 'power2.in' });
+  });
 </script>
