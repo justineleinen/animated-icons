@@ -1,26 +1,58 @@
-/* Layout */
+/* ── palette ───────────────────────────────────────────── */
+:root {
+  --sand:   #e8dcc8;
+  --clay:   #c4a882;
+  --soil:   #7a5c3e;
+  --salmon: #e8957a;
+  --dusk:   #b07d6e;
+  --moss:   #8a9e7c;
+  --tide:   #7a9aaa;
+  --fog:    #f2ece0;
+}
 
+/* ── page ───────────────────────────────────────────────── */
 body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f8f8f8;
-    color: #333;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--fog);
+  color: var(--soil);
+  font-family: sans-serif;
 }
 
+/* ── grid ───────────────────────────────────────────────── */
 .icon-grid {
-    display: flex;
-    gap: 3rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Icon sizing */
-
+/* ── icon sizing ────────────────────────────────────────── */
 .lucide {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
+  transition: filter 0.3s ease, opacity 0.3s ease;
 }
+
+.lucide:hover {
+  opacity: 0.85;
+  filter: brightness(1.1);
+}
+
+/* ── individual icon colors ─────────────────────────────── */
+#shell  { stroke: var(--moss);   }
+#wave   { stroke: var(--tide);   }
+#ship   { stroke: var(--clay);   }
+#fish   { stroke: var(--salmon); }
+#bubble { stroke: var(--tide); opacity: 0.8; }
+
+/* ── hover color shifts ─────────────────────────────────── */
+#shell:hover  { stroke: var(--soil); }
+#wave:hover   { stroke: var(--moss); }
+#ship:hover   { stroke: var(--soil); }
+#fish:hover   { stroke: var(--dusk); }
+#bubble:hover { stroke: var(--clay); }
